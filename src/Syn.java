@@ -1,17 +1,17 @@
-public class Corka extends Czlowiek {
+public class Syn extends Czlowiek {
     private boolean rak;
     private Ubranko ubranie;
 
     // konstruktory
-    public Corka() {
-        super("niebieski", 1, "skakanie");
-        this.rak = true;
+    public Syn() {
+        super("zielony", 1, "kolorowanie");
+        this.rak = false;
         this.ubranie = new Ubranko();
     }
-    public Corka(String ulubionyKolor, int wiek, String ulubionaZabawa, boolean rak) {
+    public Syn(String ulubionyKolor, int wiek, String ulubionaZabawa, boolean rak) {
         super(ulubionyKolor, wiek, ulubionaZabawa);
         this.rak = rak;
-        this.ubranie = new Ubranko();
+        this.ubranie = new Ubranko(false, this.getUlubionyKolor());
     }
 
 
@@ -21,9 +21,9 @@ public class Corka extends Czlowiek {
     public Ubranko getUbranie() { return ubranie; }
 
     public void zabawa() {
-        System.out.println("ulubiona zabawa córki to " + this.getUlubionaZabawa());
+        System.out.println("ulubiona zabawa syna to " + this.getUlubionaZabawa());
     }
     public void turlanie() {
-        System.out.println("Turu Turlu");
+        System.out.println("ałć, syn wturlał się w szafkę");
     }
 }

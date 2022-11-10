@@ -12,17 +12,20 @@ public abstract class Czlowiek {
         this.wiek = wiek;
         this.ulubionaZabawa = ulubionaZabawa;
     }
-    // set i get
+    // set-ery i get-ery --------------------------
     public String getUlubionyKolor() { return ulubionyKolor; }
     public void setUlubionyKolor(String kolor) { ulubionyKolor = kolor; }
     public int getWiek() { return wiek; }
     public void setWiek(int nowyWiek) { wiek = nowyWiek; }
     public String getUlubionaZabawa() { return ulubionaZabawa; }
     public void setUlubionaZabawa(String zabawa) { ulubionaZabawa = zabawa; }
-    // koniec set i get
+    // koniec set-erów i get-erów ------------------
 
     public void zabawa() {
         System.out.println(this.ulubionaZabawa);
     }
     public abstract void turlanie();
+    public abstract boolean getRak();
+    public abstract void setRak(boolean rak);
+    public abstract Ubranko getUbranie();
 }
