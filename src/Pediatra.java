@@ -8,7 +8,7 @@ public class Pediatra {
             pacjent.setRak(false);
         }
     }
-    public void DajNaklejke(Czlowiek pacjent) { // dajemy naklejkę "dzielny pacjent"
+    public void dajNaklejke(Czlowiek pacjent) { // dajemy naklejkę "dzielny pacjent"
         (pacjent.getUbranie()).setNaklejka(true);
     }
 }

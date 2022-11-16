@@ -15,14 +15,14 @@ public class Rodzinka {
             System.out.println("syn ma raka");
             pediatra.wylecz(syn);
             System.out.println("rak syna wyleczony");
-            pediatra.DajNaklejke(syn);
+            pediatra.dajNaklejke(syn);
         }
         else System.out.println("syn nie ma raka");
         if (pediatra.badajRaka(corka)) {
             System.out.println("córka ma raka");
             pediatra.wylecz(corka);
             System.out.println("rak córki wyleczony");
-            pediatra.DajNaklejke(corka);
+            pediatra.dajNaklejke(corka);
         }
         else System.out.println("córka nie ma raka");
 
