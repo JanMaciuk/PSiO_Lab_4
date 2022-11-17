@@ -1,33 +1,48 @@
 public class Rodzinka {
     public static void main(String[] args) {
 
-        Czlowiek syn = new Syn();
-        Czlowiek corka = new Corka();
+        Czlowiek syn1 = new Syn("czerwony", 1, "kolorowanie", false, "Piotrek");
+        Czlowiek syn2 = new Syn("niebieski", 2, "skakanie", false, "Krzysiek");
+        Czlowiek corka = new Corka("granatowy", 3, "skakanie", true, "Marysia");
         Pediatra pediatra = new Pediatra();
         // co robi rodzinka:
-        syn.turlanie();
+        syn1.turlanie();
         corka.turlanie();
+        syn2.turlanie();
 
-        /* badamy czy dzieci mają raka mimo tego, że pediatra sprawdzi to przed leczeniem,
-         zakładam, że tak postąpiłaby rodzinka, lepiej sprawdzić dwa razy niż niepotrzebnie leczyć,
-         w każdym razie, nie jest to przeoczenie w kodzie */
-        if (pediatra.badajRaka(syn)) {
-            System.out.println("syn ma raka");
-            pediatra.wylecz(syn);
-            System.out.println("rak syna wyleczony");
-            pediatra.dajNaklejke(syn);
+
+        if (pediatra.SprawdzZdrowie(syn1)) {
+            System.out.println(syn1.getImie()+" ma infekcje");
+            pediatra.wylecz(syn1);
+            System.out.println("infekcja wyleczona");
+            pediatra.dajNaklejke(syn1);
         }
-        else System.out.println("syn nie ma raka");
-        if (pediatra.badajRaka(corka)) {
-            System.out.println("córka ma raka");
+        else System.out.println(syn1.getImie()+" jest zdrowy");
+
+        if (pediatra.SprawdzZdrowie(syn2)) {
+            System.out.println(syn2.getImie()+" ma infekcje");
+            pediatra.wylecz(syn2);
+            System.out.println("infekcja wyleczona");
+            pediatra.dajNaklejke(syn2);
+        }
+        else System.out.println(syn2.getImie()+" jest zdrowy");
+
+        if (pediatra.SprawdzZdrowie(corka)) {
+            System.out.println( corka.getImie() +" ma infekcje");
             pediatra.wylecz(corka);
-            System.out.println("rak córki wyleczony");
+            System.out.println("infekcja wyleczona");
             pediatra.dajNaklejke(corka);
         }
-        else System.out.println("córka nie ma raka");
+        else System.out.println(corka.getImie()+ " jest zdrowa");
 
-        syn.zabawa();
+        syn1.zabawa();
         corka.zabawa();
+        syn2.zabawa();
+        System.out.println("Szczęśliwcy którzy mają naklejke to:");
+        if (syn1.getUbranie().getNaklejka()) { System.out.println(syn1.getImie()); }
+        if (syn2.getUbranie().getNaklejka()) { System.out.println(syn2.getImie()); }
+        if (corka.getUbranie().getNaklejka()) { System.out.println(corka.getImie()); }
 
     }
+
 }
